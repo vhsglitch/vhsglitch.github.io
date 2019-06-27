@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Калькулятор РВСП</title>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <div class="container">
+      <h2>Калькулятор РВСП</h2>
+      <p>Введите указанные значения, чтобы провести расчет премии</p>
+      <div class="container-fluid">
+          <div class="form-row">
+            <div class="form-group pt-3 pr-3 pl-3">
+              <label>Факт СУП МП:</label>
+              <input type="number" id="B3" class="form-control" placeholder="Введите значение" value=5585>
+            </div>
+
+            <div class="form-group pt-3 pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">/</label>
+              </div>
+            </div>
+
+            <div class="form-group pt-3 pr-3 pl-3">
+              <label>План СУП МП:</label>
+              <input type="number" id="E3" class="form-control" placeholder="Введите значение" value=2000>
+            </div>
+
+            <div class="form-group pt-3 pr-3 pl-3">
+              <label > </label>
+              <div>
+                <label class="my-sm-3">=</label>
+              </div>
+            </div>
+
+            <div class="form-group pt-3 pr-3 pl-3">
+              <label>К вып.</label>
+              <div>
+                <h5 class="pt-1">
+                  <span class="badge badge-pill badge-primary" id="F3" class="my-sm-2"></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <label>Факт СУП КБП:</label>
+              <input type="number" id="B5" class="form-control" placeholder="Введите значение" value=441>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">/</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <label>План СУП КБП:</label>
+              <input type="number" id="E5" class="form-control" placeholder="Введите значение" value=408>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">=</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <label>К вып.</label>
+              <div>
+                <h5 class="pt-1">
+                  <span class="badge badge-pill badge-primary" id="F5" class="my-sm-2"></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <label>Факт потери:</label>
+              <input type="number" id="B9" class="form-control" placeholder="Введите значение" value=12234>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">/</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>План потери:</label>
+              <input type="number" id="E9" class="form-control" placeholder="Введите значение" value=13167>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">=</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>К вып.</label>
+              <div>
+                <h5 class="pt-1">
+                  <span class="badge badge-pill badge-primary" id="F9" class="my-sm-2"></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <label>Факт пустые продажи МП:</label>
+              <input type="number" id="B11" class="form-control" placeholder="Введите значение" value=3653>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">/</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>План пустые продажи МП:</label>
+              <input type="number" id="E11" class="form-control" placeholder="Введите значение" value=4233>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">=</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>К вып.</label>
+              <div>
+                <h5 class="pt-1">
+                  <span class="badge badge-pill badge-primary" id="F11" class="my-sm-2"></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <label>Факт часов:</label>
+              <input type="number" id="N9" class="form-control" placeholder="Введите значение" value="504">
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">/</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>Норма часов:</label>
+              <input type="number" id="P9" class="form-control" placeholder="Введите значение" value="504">
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label> </label>
+              <div>
+                <label class="my-sm-3">=</label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>К врем.</label>
+              <div>
+                <h5 class="pt-1">
+                  <span class="badge badge-pill badge-primary" id="R9" class="my-sm-2"></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <label>CSI:</label>
+              <input type="number" step="0.1" id="I10" class="form-control" placeholder="Введите значение" value="9.6">
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label class="pr-1"> </label>
+              <div>
+                <label class="my-sm-3"></label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>Ваш оклад:</label>
+              <input type="number" class="form-control" placeholder="Введите значение" id="L12" value=50000>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label class=pr-2> </label>
+              <div>
+                <label class="my-sm-3"></label>
+              </div>
+            </div>
+
+            <div class="form-group  pr-3 pl-3">
+              <label>Оценка цен:</label>
+              <!-- <input type="number" class="form-control" placeholder="Введите значение"> -->
+
+              <select class="form-control" id="T5">
+                <option>C</option>
+                <option>A</option>
+                <option>B</option>
+                <option>D</option>
+                <option>E</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 К МП <span class="badge badge-light" id="L3"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">+</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 К КПБ <span class="badge badge-light" id="N3"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">+</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 CSI <span class="badge badge-light" id="P3"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">=</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 К рез <span class="badge badge-light" id="R3"></span>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 К УБ <span class="badge badge-light" id="I4"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 К рез <span class="badge badge-light" id="R3_1"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">*</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 K цен <span class="badge badge-light" id="R5"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">*</label>
+              </div>
+            </div>
+
+            <div class="form-group pr-3 pl-3">
+              <span class="btn btn-secondary">
+                 K врем <span class="badge badge-light" id="R9_1"></span>
+            </div>
+
+            <div class="form-group pt-2">
+              <div>
+                <label class="">=</label>
+              </div>
+            </div>
+
+
+<!--             <div class="form-group pr-3 pl-3">
+
+                <span class="btn btn-success">
+                 Ваша премия <span class="badge badge-light" id="Q12"></span>
+            </div> -->
+
+            <div class="form-group pt-1 pl-3">
+              <div>
+                <h4><label class="text-success" id="Q12"></label></h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            <div class="form-group pr-3 pl-3">
+              <div>
+                <button id="calc-btn" type="button" class="btn btn-primary">Расчитать премию</button>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+  <script src="calculations.js"></script>
+  </body>
+</html>
