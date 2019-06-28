@@ -16,7 +16,7 @@ function getInput(a, b) {
 function calcDiv(a, b) {
     var [flag, A, B] = getInput(a, b);
     if (flag) {
-        var res = B != 0 ? Math.round(A / B * 100) / 100 : NaN;
+        var res = B != 0 ? A / B : NaN;
         return isNaN(res) ? NaN : res;
     }
     return NaN;
@@ -24,8 +24,9 @@ function calcDiv(a, b) {
 
 function calcKVip(a, b, c) {
     res = calcDiv(a, b);
+
     dict[c] = isNaN(res) ? NaN: (res >= 1.5 ? 1.5 : res);
-    document.getElementById(c).innerHTML = isNaN(res) ? "": (res >= 1.5 ? 1.5 : res);
+    document.getElementById(c).innerHTML = isNaN(res) ? "": (res >= 1.5 ? 1.5 : Math.round(res * 100) / 100);
 }
 
 function calcTime(a, b, c) {
@@ -45,7 +46,7 @@ function calcKMP(a, c, coeff) {
     A = dict[a];
     B = 1.0;
     if (!isNaN(A) && !isNaN(B)) {
-        dict[c] = Math.round(A * B * coeff * 100) / 100;
+        dict[c] = A * B * coeff;
         document.getElementById(c).innerHTML = Math.round(A * B * coeff * 100) / 100;
     }
 }
@@ -73,7 +74,7 @@ function calcCSI() {
 
     csiIf = dict["CSI"];
     if (!isNaN(csiIf)) {
-        dict["P3"] = Math.round(csiIf * 0.1 * 100) / 100;
+        dict["P3"] = csiIf * 0.1;
         document.getElementById("P3").innerHTML = Math.round(csiIf * 0.1 * 100) / 100;
     }
 }
@@ -102,7 +103,7 @@ function calcKRES() {
     N3 = dict["N3"];
     P3 = dict["P3"];
     if (!isNaN(L3) && !isNaN(N3) && !isNaN(P3)) {
-        dict["R3"] = Math.round((L3 + N3 + P3) * 100) / 100;
+        dict["R3"] = (L3 + N3 + P3);
         document.getElementById("R3").innerHTML = Math.round((L3 + N3 + P3) * 100) / 100;
         document.getElementById("R3_1").innerHTML = Math.round((L3 + N3 + P3) * 100) / 100;
     }
@@ -133,6 +134,7 @@ function calcPrem() {
     R10 = 1.6;
     L12 = parseFloat(document.getElementById("L12").value);
     if (!isNaN(R3) && !isNaN(R5) && !isNaN(R9) && !isNaN(R10) && !isNaN(L12)) {
+        document.getElementById("L12_1").innerHTML = L12;
         document.getElementById("Q12").innerHTML = "Ваша премия " + Math.round(R3 * R5 * R9 * R10 * 0.87 * L12 * 100) / 100 + " р.";
     }
 }
