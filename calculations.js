@@ -94,7 +94,25 @@ function calcKUB() {
         if (C9 >= 1) {
             C9 = 1;
         }
-        document.getElementById("I4").innerHTML = C9;
+        C9 = C9 * 0.15;
+        document.getElementById("I4").innerHTML = Math.round(C9 * 100) / 100;
+        dict["I4"] = C9;
+    }
+}
+
+function calcSUP() {
+    var [flag, B3, B5] = getInput('B3', 'B5');
+    var [flag1, E3, E5] = getInput('E3', 'E5');
+    if (flag && flag1) {
+        SUP = (B3 + B5) / (E3 + E5);
+        if (SUP < 0.8) {
+            SUP = 0;
+        } else if (SUP >= 1.5) {
+            SUP = 1.5;
+        }
+        SUP = SUP * 0.15;
+        dict['J3'] = Math.round(SUP * 1000) / 1000;
+        document.getElementById("J3").innerHTML = Math.round(dict['J3'] * 100) / 100;
     }
 }
 
@@ -102,10 +120,12 @@ function calcKRES() {
     L3 = dict["L3"];
     N3 = dict["N3"];
     P3 = dict["P3"];
-    if (!isNaN(L3) && !isNaN(N3) && !isNaN(P3)) {
-        dict["R3"] = (L3 + N3 + P3);
-        document.getElementById("R3").innerHTML = Math.round((L3 + N3 + P3) * 100) / 100;
-        document.getElementById("R3_1").innerHTML = Math.round((L3 + N3 + P3) * 100) / 100;
+    J3 = dict["J3"];
+    H3 = dict["I4"];
+    if (!isNaN(L3) && !isNaN(N3) && !isNaN(P3) && !isNaN(J3) && !isNaN(H3)) {
+        dict["R3"] = (L3 + N3 + P3 + J3 + H3);
+        document.getElementById("R3").innerHTML = Math.round((dict["R3"]) * 100) / 100;
+        document.getElementById("R3_1").innerHTML = Math.round((dict["R3"]) * 100) / 100;
     }
 }
 
@@ -135,7 +155,7 @@ function calcPrem() {
     L12 = parseFloat(document.getElementById("L12").value);
     if (!isNaN(R3) && !isNaN(R5) && !isNaN(R9) && !isNaN(R10) && !isNaN(L12)) {
         document.getElementById("L12_1").innerHTML = L12;
-        document.getElementById("Q12").innerHTML = "Ваша премия " + Math.round(R3 * R5 * R9 * R10 * 0.87 * L12 * 100) / 100 + " р.";
+        document.getElementById("Q12").innerHTML = "Ваша премия " + Math.round(R3 * R5 * R9 * R10 * 0.87 * L12 * 0.33 * 100) / 100 + " р.";
     }
 }
 
@@ -150,9 +170,11 @@ function calc1() {
 
     calcKUB();
 
-    calcKMP('F3', 'L3', 0.6);
+    calcSUP();
 
-    calcKMP('F5', 'N3', 0.3);
+    calcKMP('F3', 'L3', 0.4);
+
+    calcKMP('F5', 'N3', 0.2);
 
     calcCSI();
 
